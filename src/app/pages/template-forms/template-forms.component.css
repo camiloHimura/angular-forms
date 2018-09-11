@@ -1,0 +1,37 @@
+.group{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+label{
+    width: 90px;
+}
+
+input{
+    border: none;
+    outline: none;
+    position: relative;
+    transition: all .5ms;
+    background: #80808026;
+}
+
+.message{
+    width: 100%;
+    padding: 6px;
+    display: none;
+    background: orange;
+    border-radius: 10px;
+}
+
+.message.show{
+    display: block;
+}
+
+input.ng-valid[required]:not(.ng-untouched), input.ng-valid.required:not(.ng-untouched)  {
+    border-bottom: 2px solid #42A948;
+}
+
+input.ng-invalid[required]:not(.ng-untouched), input.ng-invalid.required:not(.ng-untouched) {
+    border-bottom: 2px solid red;
+}

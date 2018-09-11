@@ -1,0 +1,30 @@
+<h2>Invio información de un elemto html a través de las "Template Reference Variables"</h2>
+
+<!-- <select #names>
+  <option value="camilo">Camilo</option>
+  <option value="cristian">Cristian</option>
+  <option value="teo">Teo</option>
+  <option value="goku">Goku</option>
+</select>
+<br><br>
+<button (click)="sendInfo(names)">Enviar</button>
+<br><br>
+<p>Opción selecionada: {{optionSelected}}</p>
+
+<hr>
+<h2>Muestro información enviandola a la clase</h2>
+<input #text type="text" (keyup)="sendValue(text.value)">
+<br>
+<p>Valor del input: {{trvInput}}  </p>
+
+<hr>
+<h2>Muestro información sin usar la clase</h2>
+<input #textTwo type="text" (keyup)="0">
+<br>
+<p>Valor del input: {{textTwo.value}}  </p> -->
+
+<hr>
+<h2>Muestro información despues de presionar enter (sub.evento de angular)</h2>
+<input #textThree type="text" (keyup.enter)="onEnter(textThree.value)" (blur)="onEnter(textThree.value)">
+<br>
+<p>Valor del input: {{textThree.value}}  </p>
