@@ -1,0 +1,52 @@
+<h3>Using FormControl </h3>
+
+<form [formGroup]="camiloForm" (ngSubmit)="onSubmit()">
+  <hr>
+  <div class="group">
+    <label for="name">name</label>
+    <input type="text" id="name" autocomplete="off" formControlName="name" #spy>
+  </div>
+  Errors: {{name.errors | json}}<br>
+  Valid: {{name.valid}}
+  <hr> 
+  <div class="group">
+    <label for="lastName">LastName</label>
+    <input type="text" id="lastName" autocomplete="off" formControlName="lastName">
+  </div>
+  Pending: {{lastName.pending}}<br>
+  Errors: {{lastName.errors | json}}<br>
+  Valid: {{lastName.valid}}
+  <hr> 
+  <div class="group">
+    <label for="age">Age</label>
+    <input type="text" id="age" autocomplete="off" formControlName="age">
+  </div>
+  <hr> 
+  <input type="checkbox" id="isStudent" formControlName="isStudent"/>
+  <label for="isStudent">Are you student?</label>
+  <hr>
+
+  <div formGroupName="location">
+    <label for="idCity">city</label>
+    <select id="idCity" formControlName="idCity">
+      <option *ngFor="let city of citys" [value]="city.id">{{city.name}}</option>
+    </select>
+    <hr>
+    <label for="department">department</label>
+    <input type="text" id="department" autocomplete="off" formControlName="department"/>
+  </div>
+  
+  <hr>
+  <button type="submit" [disabled]="!camiloForm.valid">Enviar</button>
+</form>
+  
+<button type="button" (click)="updateForm()">updateForm</button>
+
+<br><br>
+Value: {{camiloForm.value | json}}
+<br>
+Valid: {{camiloForm.status}}
+<br>
+Pending: {{camiloForm.pending | json}}
+<br>
+Error: {{camiloForm.errors | json}}

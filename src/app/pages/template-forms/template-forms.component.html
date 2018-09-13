@@ -30,13 +30,14 @@
   
   <div class="group">
     <label for="citys">city</label>
-    <select id="idCity" [(ngModel)]="user.idCity" name="idCity" #spyCity="ngModel" required #spySelect>
+    <select id="idCity" [(ngModel)]="user.idCity" name="idCity" #spyCity="ngModel" required>
       <option *ngFor="let city of citys" [value]="city.id">{{city.name}}</option>
     </select>
     
     <div class="message" [ngClass]="{'show': spyCity.invalid && spyCity.touched}">
       Seleciona una ciudad
     </div>
+
   </div>
   <hr>
   form value: {{camiloForm.value | json}}<br>
