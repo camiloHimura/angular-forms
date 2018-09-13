@@ -13,6 +13,10 @@ import { PropertyEventComponent } from './components/property-event/property-eve
 import { TemplateReferenceVariableComponent } from './components/template-reference-variable/template-reference-variable.component';
 import { MiloValidatorDirective } from './milo-validator.directive';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { PipesComponent } from './pages/pipes/pipes.component';
+import { CamiloPipe } from './pipes/camilo.pipe';
+import { AsyncPipe } from './pipes/async.pipe';
+import { SanitizationPipe } from './pipes/sanitization.pipe';
 
 @NgModule({
   declarations: [
@@ -23,6 +27,10 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
     TemplateFormsComponent,
     MiloValidatorDirective,
     ReactiveFormsComponent,
+    PipesComponent,
+    CamiloPipe,
+    AsyncPipe,
+    SanitizationPipe,
   ],
   imports: [
     FormsModule,

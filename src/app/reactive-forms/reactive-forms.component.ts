@@ -12,6 +12,14 @@ import { UniqueService } from '../validators/async/unique.service';
 })
 export class ReactiveFormsComponent implements OnInit {
 
+  //Listen input by formComtrol
+  //Manage subscribe an unsubscribe
+  //group elements
+  //group validations
+  //updateOn?: 'change' | 'blur' | 'submit'
+  //Pipes
+  //run built - built aot
+
   citys: {name: string, id: number}[] = [ 
     {name: "--- ---", id: null},
     {name: "Medellín", id: 1},
@@ -40,15 +48,14 @@ export class ReactiveFormsComponent implements OnInit {
                         name: ['', [Validators.required, Validators.pattern(''),
                                     Validators.minLength(5), Validators.maxLength(10), letterValidator('o')],
                                   ],
-                        lastName: ['', [], [this.uniqueService]],
+                        lastName: ['', {updateOn: 'blur', validators:[], asyncValidators: [this.uniqueService]}],
                         age: ['', Validators.required],
                         isStudent: ['', Validators.required],
                         location: this.fb.group({
                           idCity: [''],
                           department: ['', Validators.required],
                         })
-                      },
-                      { validator: [initialLetterValidator('c')] })
+                      },{ validator: [initialLetterValidator('c')], updateOn: 'submit' })
     console.log(this.camiloForm);
   }
 

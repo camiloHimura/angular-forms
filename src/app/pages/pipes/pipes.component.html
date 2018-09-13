@@ -1,0 +1,43 @@
+<h1>Control pipes</h1>
+<a href="https://angular.io/api?type=pipe">https://angular.io/api?type=pipe</a>
+<br>
+<br>
+
+<code>numbers | camiloPipe: 4:50</code>: 
+<div>{{numbers | camiloPipe: 4:50}}</div>
+<hr>
+<div *ngFor="let number of (numbers | camiloPipe: 4:50)">{{number}}</div>
+<hr>
+<input #number type="text"><br>
+<button (click)=addNumber(number.value)>Add number</button>
+<hr>
+<h2>Async pipe</h2>
+<div>{{numbers | asyncPipe: 4:50 | async}}</div>
+<h2>Sanitization</h2>
+<div [innerHtml]="content"></div>
+<hr>
+<h2>url</h2>
+<p><a [href]="dangerousUrl">Click me</a></p>
+
+<!-- <code>data | json</code>: 
+<div>{{data | json}}</div><br>
+<div><code>observable|async</code><br>
+: Time: {{ time | async }}</div><br>
+<div><code>date</code><br>
+<p>The time is {{today | date:'fullDate'}}
+<div><code>percent</code><br>
+<p>A: {{0.12321 | percent}}</p>
+<p>B: {{0.1231| percent:'4.3-5'}}</p>
+<div><code>titlecase</code><br>
+<p>{{title | titlecase}}</p>
+<div><code>lowercase</code><br>
+<p>{{title | lowercase}}</p>
+<div><code>uppercase</code><br>
+<p>{{title | uppercase}}</p>
+
+<div><h2>DecimalPipe</h2>
+<p>B: {{0.324324 | number:'2.2-5'}}</p>
+<div><code>slice</code><br>
+<ul>
+<li *ngFor="let i of collection | slice:1:3">{{i}}</li>
+</ul>` -->
