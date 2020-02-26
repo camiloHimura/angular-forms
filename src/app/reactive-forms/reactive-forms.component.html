@@ -35,9 +35,20 @@
     <label for="department">department</label>
     <input type="text" id="department" autocomplete="off" formControlName="department"/>
   </div>
-  
+  <br>
   <hr>
+  Dinamic forms
+  <div *ngFor="let item of getArrayDefault; let i = index">
+    {{i}} name
+    <input type="checkbox" [formControl]="item"/>
+  </div>
+  <br>
+  
+  <button type="button" (click)="test()">test</button>
+  <hr>
+  <br>
   <!-- <button type="submit" [disabled]="!camiloForm.valid">Enviar</button> -->
+  <br>
   <button type="submit" >Enviar</button>
 </form>
   

@@ -4,6 +4,7 @@ import { Validators } from '@angular/forms';
 import { letterValidator } from '../validators/letterValidator';
 import { initialLetterValidator } from '../validators/initialLetterValidator';
 import { UniqueService } from '../validators/async/unique.service';
+import { TestBed } from '@angular/core/testing';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -37,7 +38,8 @@ export class ReactiveFormsComponent implements OnInit {
   //     department: new FormControl(''),
   //   })
   // });
-
+  generalkey = 1;
+  getArrayDefault = [];
   camiloForm: FormGroup;
 
   constructor(private fb: FormBuilder, private uniqueService: UniqueService) {
@@ -54,6 +56,9 @@ export class ReactiveFormsComponent implements OnInit {
                         location: this.fb.group({
                           idCity: [''],
                           department: ['', Validators.required],
+                        }),
+                        test: this.fb.group({
+                          default: this.fb.group({}),
                         })
                       },{ validator: [initialLetterValidator('c')], updateOn: 'submit' })
     console.log(this.camiloForm);
@@ -84,6 +89,20 @@ export class ReactiveFormsComponent implements OnInit {
     // })
   }
 
+  test(){
+    this.getDefault.setControl(`onVisa${this.generalkey++}`, this.fb.control(false))
+    this.getArrayDefault = Object.values(this.getDefault.controls);
+  }
+
+  get getTest() { 
+    return this.camiloForm.get('test') as FormGroup; 
+  }
+
+  get getDefault() { 
+    return this.getTest.get('default') as FormGroup; 
+  }
+
   get name() { return this.camiloForm.get('name'); }
   get lastName() { return this.camiloForm.get('lastName'); }
 }
+
